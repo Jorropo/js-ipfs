@@ -1,4 +1,5 @@
 /* eslint-env mocha */
+/* eslint-disable no-useless-escape */
 'use strict'
 
 const { expect } = require('interface-ipfs-core/src/utils/mocha')
@@ -26,7 +27,7 @@ describe('repo', () => runOnAndOff((thing) => {
   it('get human readable repo stats', async () => {
     const stats = await ipfs('repo stat --human')
 
-    expect(stats).to.match(/^RepoSize:\s+[\d.]+\s[PTGMK]?B$/gm)
-    expect(stats).to.match(/^StorageMax:\s+[\d.]+\s[PTGMK]?B$/gm)
+    expect(stats).to.match(/^RepoSize:\s+[\d\.]+\s[PTGMK]?B$/gm)
+    expect(stats).to.match(/^StorageMax:\s+[\d\.]+\s[PTGMK]?B$/gm)
   })
 }))
